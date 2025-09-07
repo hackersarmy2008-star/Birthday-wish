@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,6 +35,72 @@
         }
         @keyframes fall {
             to { transform: translateY(100vh); opacity: 0; }
+        }
+        .message-container {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-radius: 15px;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center text-center px-4 py-8">
+    <div class="fade-in max-w-4xl mx-auto">
+        <h1 class="text-6xl font-bold text-white mb-8 tracking-widest floating">
+            Happy Birthday, Sakshi!
+        </h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="message-container bg-white bg-opacity-90">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6bb28850-16a6-4633-95d4-16e71078d604.png" class="w-full h-64 object-cover rounded-lg mb-4" />
+                <p class="text-2xl text-gray-800 leading-relaxed mb-6">
+                    Wishing you a day filled with love, laughter, and endless happiness.<br>
+                    May all your dreams come true and this year bring you lots of success, joy, and beautiful memories.
+                </p>
+            </div>
+            <div class="message-container bg-white bg-opacity-90">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a837c147-9e0b-4e4f-9780-697e7163784a.png" class="w-full h-64 object-cover rounded-lg mb-4" />
+                <p class="text-2xl text-gray-800 leading-relaxed mb-6">
+                    Stay amazing, keep shining, and enjoy your special day to the fullest!<br>
+                    With love & best wishes.
+                </p>
+            </div>
+        </div>
+        <div class="bg-gradient-to-r from-purple-400 to-pink-400 text-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-3xl font-semibold mb-4">A Special Message for You</h2>
+            <p class="text-xl leading-loose">
+                This year, may every moment be a celebration of your spirit. Surround yourself with those who lift you up, chase your passions with fervor, and create memories that last a lifetime. From sunrise adventures to cozy evenings, let joy be your constant companion. Here's to another chapter of brilliance and beauty in your life!
+            </p>
+        </div>
+
+        <!-- Yes/No Buttons -->
+        <div class="mt-8 space-x-4">
+            <button id="yesBtn" class="bg-green-500 text-white py-3 px-8 rounded-full font-bold text-xl hover:bg-green-600 transition duration-300 shadow-lg">
+                Yes
+            </button>
+            <button id="noBtn" class="bg-red-500 text-white py-3 px-8 rounded-full font-bold text-xl hover:bg-red-600 transition duration-300 shadow-lg">
+                No
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let noCount = 0;
+
+        document.getElementById('yesBtn').addEventListener('click', function() {
+            // Redirect to WhatsApp with "Yes" message
+            window.location.href = "https://wa.me/6289478376?text=Yes";
+        });
+
+        document.getElementById('noBtn').addEventListener('click', function() {
+            if (noCount < 2) {
+                noCount++;
+                alert("Think again... Yes or No?");
+            } else {
+                alert("Okay, no problem!");
+            }
+        });
+    </script>
+</body>
+</html>
         }
         .message-container {
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);

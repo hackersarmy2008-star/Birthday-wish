@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Sakshi!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff4081;
+            animation: fall 5s linear infinite;
+            border-radius: 50%;
+        }
+        @keyframes fall {
+            to { transform: translateY(100vh); opacity: 0; }
+        }
+        .message-container {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-radius: 15px;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center text-center px-4 py-8">
+    <div class="fade-in max-w-4xl mx-auto">
+        <h1 class="text-6xl font-bold text-white mb-8 tracking-widest floating">
+            Happy Birthday, Sakshi!
+        </h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="message-container bg-white bg-opacity-90">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6bb28850-16a6-4633-95d4-16e71078d604.png" alt="A beautifully decorated birthday cake with pink frosting, colorful sprinkles, and glowing candles in the shape of numbers for the birthday, surrounded by festive party confetti and ornate decorations in a warm, festive lighting" class="w-full h-64 object-cover rounded-lg mb-4" />
+                <p class="text-2xl text-gray-800 leading-relaxed mb-6">
+                    Wishing you a day filled with love, laughter, and endless happiness.<br>
+                    May all your dreams come true and this year bring you lots of success, joy, and beautiful memories.
+                </p>
+            </div>
+            <div class="message-container bg-white bg-opacity-90">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a837c147-9e0b-4e4f-9780-697e7163784a.png" alt="A group of colorful balloons with ribbons floating against a bright background, including heart-shaped balloons, star balloons, and ones with happy messages, in pastel colors like blue, pink, and yellow, evoking celebration and joy" class="w-full h-64 object-cover rounded-lg mb-4" />
+                <p class="text-2xl text-gray-800 leading-relaxed mb-6">
+                    Stay amazing, keep shining, and enjoy your special day to the fullest!<br>
+                    With love & best wishes.
+                </p>
+            </div>
+        </div>
+        <div class="bg-gradient-to-r from-purple-400 to-pink-400 text-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-3xl font-semibold mb-4">A Special Message for You</h2>
+            <p class="text-xl leading-loose">
+                This year, may every moment be a celebration of your spirit. Surround yourself with those who lift you up, chase your passions with fervor, and create memories that last a lifetime. From sunrise adventures to cozy evenings, let joy be your constant companion. Here's to another chapter of brilliance and beauty in your life!
+            </p>
+        </div>
+        <button id="confettiBtn" class="mt-8 bg-pink-500 text-white py-3 px-8 rounded-full font-bold text-xl hover:bg-pink-600 transition duration-300 shadow-lg">
+            Celebrate More!
+        </button>
+    </div>
+
+    <script>
+        document.getElementById('confettiBtn').addEventListener('click', function() {
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = ['#ff4081', '#3f51b5', '#4caf50', '#ffc107', '#e91e63'][Math.floor(Math.random() * 5)];
+                confetti.style.animationDelay = Math.random() * 5 + 's';
+                document.body.appendChild(confetti);
+                setTimeout(() => confetti.remove(), 5000);
+            }
+        });
+
+        // Auto-start floating animation on load
+        window.onload = () => {
+            const floats = document.querySelectorAll('.floating');
+            floats.forEach(el => el.style.animationPlayState = 'running');
+        };
+    </script>
+</body>
+</html>
+</content>
+</create_file>

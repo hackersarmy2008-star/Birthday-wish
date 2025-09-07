@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,14 +49,14 @@
         </h1>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div class="message-container bg-white bg-opacity-90">
-                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6bb28850-16a6-4633-95d4-16e71078d604.png" alt="A beautifully decorated birthday cake with pink frosting, colorful sprinkles, and glowing candles in the shape of numbers for the birthday, surrounded by festive party confetti and ornate decorations in a warm, festive lighting" class="w-full h-64 object-cover rounded-lg mb-4" />
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6bb28850-16a6-4633-95d4-16e71078d604.png" class="w-full h-64 object-cover rounded-lg mb-4" />
                 <p class="text-2xl text-gray-800 leading-relaxed mb-6">
                     Wishing you a day filled with love, laughter, and endless happiness.<br>
                     May all your dreams come true and this year bring you lots of success, joy, and beautiful memories.
                 </p>
             </div>
             <div class="message-container bg-white bg-opacity-90">
-                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a837c147-9e0b-4e4f-9780-697e7163784a.png" alt="A group of colorful balloons with ribbons floating against a bright background, including heart-shaped balloons, star balloons, and ones with happy messages, in pastel colors like blue, pink, and yellow, evoking celebration and joy" class="w-full h-64 object-cover rounded-lg mb-4" />
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a837c147-9e0b-4e4f-9780-697e7163784a.png" class="w-full h-64 object-cover rounded-lg mb-4" />
                 <p class="text-2xl text-gray-800 leading-relaxed mb-6">
                     Stay amazing, keep shining, and enjoy your special day to the fullest!<br>
                     With love & best wishes.
@@ -69,32 +68,34 @@
             <p class="text-xl leading-loose">
                 This year, may every moment be a celebration of your spirit. Surround yourself with those who lift you up, chase your passions with fervor, and create memories that last a lifetime. From sunrise adventures to cozy evenings, let joy be your constant companion. Here's to another chapter of brilliance and beauty in your life!
             </p>
-        </div>
-        <button id="confettiBtn" class="mt-8 bg-pink-500 text-white py-3 px-8 rounded-full font-bold text-xl hover:bg-pink-600 transition duration-300 shadow-lg">
-            Celebrate More!
+        </div><!-- Yes/No Buttons -->
+    <div class="mt-8 space-x-4">
+        <button id="yesBtn" class="bg-green-500 text-white py-3 px-8 rounded-full font-bold text-xl hover:bg-green-600 transition duration-300 shadow-lg">
+            Yes
+        </button>
+        <button id="noBtn" class="bg-red-500 text-white py-3 px-8 rounded-full font-bold text-xl hover:bg-red-600 transition duration-300 shadow-lg">
+            No
         </button>
     </div>
+</div>
 
-    <script>
-        document.getElementById('confettiBtn').addEventListener('click', function() {
-            for (let i = 0; i < 50; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.backgroundColor = ['#ff4081', '#3f51b5', '#4caf50', '#ffc107', '#e91e63'][Math.floor(Math.random() * 5)];
-                confetti.style.animationDelay = Math.random() * 5 + 's';
-                document.body.appendChild(confetti);
-                setTimeout(() => confetti.remove(), 5000);
-            }
-        });
+<script>
+    let noCount = 0;
 
-        // Auto-start floating animation on load
-        window.onload = () => {
-            const floats = document.querySelectorAll('.floating');
-            floats.forEach(el => el.style.animationPlayState = 'running');
-        };
-    </script>
+    document.getElementById('yesBtn').addEventListener('click', function() {
+        // Redirect to WhatsApp with "Yes" message
+        window.location.href = "https://wa.me/YOURNUMBER?text=Yes";
+    });
+
+    document.getElementById('noBtn').addEventListener('click', function() {
+        if (noCount < 2) {
+            noCount++;
+            alert("Think again... Yes or No?");
+        } else {
+            alert("Okay, no problem!");
+        }
+    });
+</script>
+
 </body>
 </html>
-</content>
-</create_file>

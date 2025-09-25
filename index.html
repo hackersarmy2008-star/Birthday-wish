@@ -7,33 +7,207 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
             font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            color: #2d3436;
             overflow-x: hidden;
         }
-        .floating {
-            animation: float 3s ease-in-out infinite;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
         }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        .fade-in {
+        .message {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             animation: fadeIn 2s ease-in-out;
+        }
+        .emoji-text {
+            display: inline-block;
+            margin: 0 5px;
+            font-size: 1.5em;
+            vertical-align: middle;
+        }
+        .heart {
+            color: #e17055;
+            animation: pulse 1s infinite;
+        }
+        .sparkle {
+            color: #ffeaa7;
+            animation: twinkle 1s infinite;
+        }
+        .gift-box {
+            background: #fab1a0;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            animation: bounce 1s infinite;
         }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        .image-container {
+            margin: 20px 0;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
         .confetti {
             position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #ff4081;
-            animation: fall 5s linear infinite;
-            border-radius: 50%;
+            top: -10px;
+            left: 50%;
+            width: 0;
+            height: 0;
+            animation: confetti 3s linear infinite;
         }
-        @keyframes fall {
+        @keyframes confetti {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/83113a19-27e6-4fbb-80c4-6998cf3e7c52.png" alt="Vibrant birthday cake with colorful frosting, candles lit on top, surrounded by pastel balloons in a festive indoor setting with soft lighting and confetti falling gently around it" />
+        </div>
+        <div class="message">
+            <h1 class="text-4xl font-bold mb-4">
+                <span class="emoji-text">Happy Birthday, Sakshi!</span>
+                <div class="confetti">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e9e6d5f7-ba36-4742-b624-70b0b1b32423.png" alt="Small yellow star-shaped confetti piece twirling in the air" />
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/30ba10c1-519d-486d-86b8-b85fde487af1.png" alt="Small pink heart-shaped confetti piece floating gracefully" />
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d9ab5a56-b122-46dd-aacc-4d42acde490f.png" alt="Small blue diamond-shaped confetti piece sparkling in motion" />
+                </div>
+            </h1>
+            <p class="text-lg mb-4">
+                Wishing you a day filled with love, laughter, and endless happiness. <br>
+                May all your dreams come true and this year bring you lots of success, joy, and beautiful memories.
+                <span class="gift-box">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9c435db7-d712-4570-bf33-310c9b895649.png" alt="Small wrapped gift box with colorful ribbons and bow" />
+                </span>
+                <span class="heart"> 
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a49110c1-18c0-441d-b8fb-1e855858e457.png" alt="Tiny red heart shape pulsing gently" />
+                </span>
+            </p>
+            <p class="text-lg mb-4">
+                Stay amazing, keep shining, and enjoy your special day to the fullest!
+                <span class="sparkle">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/83baad21-0546-4aca-81d6-092e2f0c7bb7.png" alt="Shimmering gold sparkle effect like star dust" />
+                </span>
+                <span class="gift-box">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e2b8e297-f1ef-45fe-8984-afa69a2423a7.png" alt="Wrapped present with pastel pink bow and detailing" />
+                </span>
+                <span class="sparkle">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b3cd8356-7ee5-4fbb-8c32-5c849bee7c7e.png" alt="Twinkling silver sparkle reminiscent of fairy lights" />
+                </span>
+            </p>
+            <p class="text-lg font-semibold">
+                With love & best wishes
+                <span class="heart">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6a83b7b3-2f8e-4313-89ae-94068a720375.png" alt="Small pink heart icon beat like a heartbeat" />
+                </span>
+                I like you Sakshi 
+                <span class="heart">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6914eb9e-d89f-44ca-bffc-610334f11bdf.png" alt="Deep red heart symbolizing affection" />
+                </span>
+            </p>
+            <p class="text-lg">
+                Me tumhe bohot pasand karta hu kya tum meri girlfriend banogi
+            </p>
+            <div class="image-container mt-6">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/71607042-1dfd-4bb9-8a77-e3b6a4222990.png" alt="Romantic scene of two hands holding each other with a sunset background, soft focus on intertwined fingers symbolizing connection, warm golden hues evoking love and tenderness" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple confetti animation using Canvas
+        function createConfetti() {
+            const canvas = document.createElement('canvas');
+            canvas.style.position = 'fixed';
+            canvas.style.top = '0';
+            canvas.style.left = '0';
+            canvas.style.pointerEvents = 'none';
+            document.body.appendChild(canvas);
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const particles = [];
+            for (let i = 0; i < 100; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    r: Math.random() * 5 + 2,
+                    d: Math.random() * 5 + 1,
+                    color: ['#ffcccc', '#ffeaa7', '#fab1a0'][Math.floor(Math.random() * 3)],
+                    tilt: Math.random() * 10 - 10
+                });
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    ctx.beginPath();
+                    ctx.lineWidth = p.r;
+                    ctx.strokeStyle = p.color;
+                    ctx.moveTo(p.x + p.tilt, p.y);
+                    ctx.lineTo(p.x + p.tilt + p.r, p.y + p.r);
+                    ctx.stroke();
+                    ctx.closePath();
+                });
+                update();
+                requestAnimationFrame(draw);
+            }
+
+            function update() {
+                particles.forEach(p => {
+                    p.y += Math.cos(p.x / 50) * 1.5 + p.r / 2;
+                    p.x += Math.sin(p.d / 10) * 2;
+                    if (p.x > canvas.width + 5 || p.x < -5 || p.y > canvas.height) {
+                        p.x = Math.random() * canvas.width;
+                        p.y = -10;
+                    }
+                });
+            }
+
+            draw();
+        }
+
+        // Play confetti on load for added birthday feel
+        window.onload = () => {
+            createConfetti();
+            setTimeout(() => {
+                const audio = new Audio('https://www.soundjay.com/misc/sounds/bell-ringing-05.wav'); // Placeholder audio, replace if needed
+                audio.play().catch(() => {}); // Ignore if blocked
+            }, 1000);
+        };
+    </script>
+</body>
+</html>
+</content>
+</create_file>
             to { transform: translateY(100vh); opacity: 0; }
         }
         .message-container {
